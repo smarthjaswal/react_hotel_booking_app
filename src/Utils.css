@@ -1,0 +1,15 @@
+.dateSector{
+ margin-top: 30px;
+}
+
+label {
+   
+    color: white;
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: 0.4rem 0;
+}
