@@ -1,6 +1,14 @@
 import React from 'react'
+import { useState } from 'react';
 
-function sidebar() {
+
+function Sidebar() {
+        const [price, setPrice] = useState(300);
+
+        const handlePriceChange = (event) => {
+            setPrice(event.target.value);
+        };
+
     return (
 
         <div className='start-0 border-0 bg-dark' style={{ height: "100%", width: "100%", marginTop: "55px" }}>
@@ -61,15 +69,36 @@ function sidebar() {
                     <p>duration</p>
                 </div>
             </div>
+
             <div className='priceRange'>
-                <label for="price-range">Price range:</label>
-                <input type="range" id="price-range" name="price-range" min="300" max="10000" />
-                <div id="price-value"></div>
+                <label htmlFor="price-range">Price range:</label>
+                <input
+                    type="range"
+                    id="price-range"
+                    name="price-range"
+                    min="300"
+                    max="3000"
+                    value={price}
+                    onChange={handlePriceChange}
+                />
+                <div id="price-value" style={{color:"white"}}>{price}</div>
+            </div>
+            <div className='search my-3'>
+                <button className='btn btn-danger' style={{width:"200px"}}>Search</button>
             </div>
 
 
+
+
         </div>
+
+
+
+
+
+
+
     )
 }
 
-export default sidebar
+export default Sidebar
